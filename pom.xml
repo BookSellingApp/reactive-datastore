@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>reactive-datastore</name>
-	<description>Demo project for Spring Boot</description>
+	<description>This is a Spring Reactive application to connect to Mongo DB reactively to allow Book Store, User Profile access.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
