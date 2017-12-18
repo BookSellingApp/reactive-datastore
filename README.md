@@ -57,3 +57,23 @@ Upon clicking the SEND button, we shall see the responce as below:
 }
 
 ```
+
+
+### Data Model
+
+The below are the Document Object models persisted in Mondo DB.
+    
+    * Book
+    * Customer
+    * Order
+    * Stock
+    * Address
+
+##### Relationships between object models is as below
+
+    1. Each Customer can have Many Orders (One to Many)
+    2. Each Order can have Many Books (One to Many)
+    3. Each Book will have One stock details (One to One)
+    4. Each Customer will have One Address (One to One)
+    
+        

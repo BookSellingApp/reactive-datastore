@@ -40,8 +40,22 @@ public class Book {
 
     private Double cost;
 
+    private Stock stock;
+
     public Book() {
         super();
+    }
+
+    public Book(String id, @NotBlank @Size(max = 100) String title, String author, String description, Date createdAt, Date updatedAt, String imageUrl, Double cost, Stock stock) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.imageUrl = imageUrl;
+        this.cost = cost;
+        this.stock = stock;
     }
 
     public Book(String title) {
