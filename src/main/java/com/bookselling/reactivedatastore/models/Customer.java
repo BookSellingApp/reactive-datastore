@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document (collection = "customers")
+@Document(collection = "customers")
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 public class Customer {
 
@@ -26,21 +26,19 @@ public class Customer {
 
     private String mobileNumber;
 
-    private Address address;
+//    private Address address;
 
-    private List<Order> orders;
+//    private List<Order> orders;
 
     public Customer() {
     }
 
-    public Customer(String id, String firstName, String lastName, String emailId, String mobileNumber, Address address, List<Order> orders) {
+    public Customer(String id, String firstName, String lastName, String emailId, String mobileNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
         this.mobileNumber = mobileNumber;
-        this.address = address;
-        this.orders = orders;
     }
 
     public String getId() {
@@ -83,22 +81,6 @@ public class Customer {
         this.mobileNumber = mobileNumber;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
@@ -107,8 +89,6 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", emailId='" + emailId + '\'' +
                 ", mobileNumber='" + mobileNumber + '\'' +
-                ", address=" + address +
-                ", orders=" + orders +
                 '}';
     }
 }

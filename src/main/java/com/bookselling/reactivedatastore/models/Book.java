@@ -6,7 +6,6 @@ package com.bookselling.reactivedatastore.models;
  */
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -24,8 +23,8 @@ public class Book {
     private String id;
 
     @NotBlank
-    @Size (max = 100)
-    @Indexed (unique = true)
+    @Size(max = 100)
+    @Indexed(unique = true)
     private String title;
 
     private String author;

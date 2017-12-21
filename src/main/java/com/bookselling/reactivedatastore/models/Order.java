@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.List;
 
-@Document (collection = "orders")
+@Document(collection = "orders")
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 public class Order {
 

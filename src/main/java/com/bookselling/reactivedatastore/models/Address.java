@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document (collection = "addresses")
+@Document(collection = "addresses")
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 public class Address {
 

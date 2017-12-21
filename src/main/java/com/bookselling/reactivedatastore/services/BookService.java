@@ -24,21 +24,21 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Flux<Book> findAllBooks(){
+    public Flux<Book> findAllBooks() {
         return bookRepository.findAll();
     }
 
-    public Mono<Book> createBook(Book book){
+    public Mono<Book> createBook(Book book) {
         return bookRepository.save(book);
     }
 
-    public Mono<ResponseEntity<Book>> findById(String id){
+    public Mono<ResponseEntity<Book>> findById(String id) {
         return bookRepository.findById(id)
                 .map(book -> ResponseEntity.ok(book))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
-    public Mono<ResponseEntity<Book>> updateBook(String id, Book book){
+    public Mono<ResponseEntity<Book>> updateBook(String id, Book book) {
 
         return bookRepository.findById(id)
                 .flatMap(existingBook -> {
@@ -55,12 +55,12 @@ public class BookService {
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    public Mono<ResponseEntity<Void>> deleteBook(String id){
+    public Mono<ResponseEntity<Void>> deleteBook(String id) {
 
         return bookRepository.findById(id)
                 .flatMap(existingBook ->
-                    bookRepository.delete(existingBook)
-                .then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK))))
+                        bookRepository.delete(existingBook)
+                                .then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK))))
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-  }
+}

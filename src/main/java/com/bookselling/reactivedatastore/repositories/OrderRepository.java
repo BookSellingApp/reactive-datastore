@@ -6,7 +6,6 @@ package com.bookselling.reactivedatastore.repositories;
  */
 
 import com.bookselling.reactivedatastore.models.Order;
-import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
