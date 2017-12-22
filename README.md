@@ -8,7 +8,7 @@ Intall **MongoDB**
 Start **MongoDB** using `mongod`
 
 Install **MongoDB 3.4.10 Community** for exploring and manipulating the Mondo DB
-data.
+data or use **MongoDB Compass Community** with a UI for documents viewing and modifications.
 
 Start Mongo shell using `mongo --host localhost:27017`
 
