@@ -7,15 +7,18 @@ Intall **MongoDB**
 
 Start **MongoDB** using `mongod`
 
-Install **MongoDB 3.4.10 Community** for exploring and manipulating the Mondo DB
-data or use **MongoDB Compass Community** with a UI for documents viewing and modifications.
+* Install **MongoDB 3.4.10 Community** for exploring and manipulating the Mondo DB
+data 
 
-Start Mongo shell using `mongo --host localhost:27017`
+    Start Mongo shell using `mongo --host localhost:27017`
 
 ```
 > use bookStoreApp
 switched to db bookStoreApp
 ```
+
+* Or use **MongoDB Compass Community** with a UI for documents viewing and modifications.
+
 
 Update the `application.properties` with relevant DB settings.
 
@@ -75,5 +78,6 @@ The below are the Document Object models persisted in Mondo DB.
     2. Each Order can have Many Books (One to Many)
     3. Each Book will have One stock details (One to One)
     4. Each Customer will have One Address (One to One)
+    
     
         
