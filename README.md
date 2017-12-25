@@ -60,7 +60,7 @@ Upon clicking the SEND button, we shall see the responce as below:
 }
 
 ```
-## More details
+## More details on DB are as below:
 
 ### Data Model
 
