@@ -8,7 +8,7 @@ Intall **MongoDB**
 Start **MongoDB** using `mongod`
 
 * Install **MongoDB 3.4.10 Community** for exploring and manipulating the Mondo DB
-data 
+data
 
     Start Mongo shell using `mongo --host localhost:27017`
 
@@ -60,12 +60,12 @@ Upon clicking the SEND button, we shall see the responce as below:
 }
 
 ```
-
+## More details on DB are as below:
 
 ### Data Model
 
 The below are the Document Object models persisted in Mondo DB.
-    
+
     * Book
     * Customer
     * Order
@@ -78,7 +78,3 @@ The below are the Document Object models persisted in Mondo DB.
     2. Each Order can have Many Books (One to Many)
     3. Each Book will have One stock details (One to One)
     4. Each Customer will have One Address (One to One)
-    
-    
-Testing GIT    
-        
