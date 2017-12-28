@@ -13,6 +13,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -29,6 +31,12 @@ public class CustomerController {
     public Flux<Customer> getAllCustomers() {
 
         return customerService.findAllCustomers();
+    }
+
+    @GetMapping(value = "/customers/search/{firstName}")
+    public  Flux<Customer> getCustomerByFirstName(@PathVariable("firstName") String firstName) {
+
+        return customerService.findByFirstName(firstName);
     }
 
     @PostMapping("/customers")

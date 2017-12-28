@@ -8,12 +8,13 @@ package com.bookselling.reactivedatastore.repositories;
 import com.bookselling.reactivedatastore.models.Customer;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
 public interface CustomerRepository extends ReactiveCrudRepository<Customer, String> {
 
-    Mono<Customer> findByFirstName(String firstName);
+    Flux<Customer> findByFirstName(String firstName);
 
     Mono<Customer> findByLastName(String lastName);
 

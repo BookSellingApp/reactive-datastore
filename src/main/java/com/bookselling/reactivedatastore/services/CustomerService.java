@@ -26,6 +26,10 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public Flux<Customer> findByFirstName(String firstName) {
+        return customerRepository.findByFirstName(firstName);
+    }
+
     public Mono<Customer> createCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
