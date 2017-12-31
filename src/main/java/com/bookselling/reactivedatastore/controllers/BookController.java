@@ -31,6 +31,12 @@ public class BookController {
         return bookService.findAllBooks();
     }
 
+    @GetMapping(value = "/books/search/{title}")
+    public  Iterable<Book> getCustomerByTitle(@PathVariable("title") String title) {
+
+        return bookService.findByTitle(title);
+    }
+
     @PostMapping("/books")
     public Mono<Book> createBook(@Valid @RequestBody Book book) {
 

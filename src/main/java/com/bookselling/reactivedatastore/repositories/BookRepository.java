@@ -14,6 +14,8 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface BookRepository extends ReactiveCrudRepository<Book, String> {
 
+//    Iterable<Book> findByBookTitle(String title);
+
     Mono<Book> findByTitle(String title);
 
     Flux<Book> findByAuthor(String author);

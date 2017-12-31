@@ -34,7 +34,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "/customers/search/{firstName}")
-    public  Flux<Customer> getCustomerByFirstName(@PathVariable("firstName") String firstName) {
+    public  Iterable<Customer> getCustomerByFirstName(@PathVariable("firstName") String firstName) {
 
         return customerService.findByFirstName(firstName);
     }

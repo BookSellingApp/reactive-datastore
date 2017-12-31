@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface CustomerRepository extends ReactiveCrudRepository<Customer, String> {
 
-    Flux<Customer> findByFirstName(String firstName);
+    Iterable<Customer> findByFirstName(String firstName);
 
     Mono<Customer> findByLastName(String lastName);
 

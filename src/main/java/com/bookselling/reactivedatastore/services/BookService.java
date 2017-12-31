@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class BookService {
@@ -26,6 +28,12 @@ public class BookService {
 
     public Flux<Book> findAllBooks() {
         return bookRepository.findAll();
+    }
+
+    public Iterable<Book> findByTitle(String title) {
+        List<Book> bookList = new ArrayList<Book>();
+        bookList.add(bookRepository.findByTitle(title).block());
+        return bookList;
     }
 
     public Mono<Book> createBook(Book book) {
