@@ -52,6 +52,10 @@ public class Address {
         this.updatedAt = updatedAt;
     }
 
+    public Address(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
     public Address() {
     }
 

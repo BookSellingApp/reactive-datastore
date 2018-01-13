@@ -26,19 +26,31 @@ public class Customer {
 
     private String mobileNumber;
 
-//    private Address address;
+    private String password;
+
+    private Address address;
 
 //    private List<Order> orders;
 
     public Customer() {
     }
 
-    public Customer(String id, String firstName, String lastName, String emailId, String mobileNumber) {
+    public Customer(String id, String firstName, String lastName, String emailId, String mobileNumber, String password, Address address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
         this.mobileNumber = mobileNumber;
+        this.address = address;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getId() {
@@ -79,6 +91,14 @@ public class Customer {
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override

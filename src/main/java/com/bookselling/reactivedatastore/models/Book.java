@@ -39,6 +39,8 @@ public class Book {
 
     private Double cost;
 
+    private boolean status;
+
     private Stock stock;
 
     public Book() {
