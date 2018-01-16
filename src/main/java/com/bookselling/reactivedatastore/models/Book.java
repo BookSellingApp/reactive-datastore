@@ -39,7 +39,7 @@ public class Book {
 
     private Double cost;
 
-    private boolean status;
+    private String status;
 
     private Stock stock;
 
@@ -47,7 +47,7 @@ public class Book {
         super();
     }
 
-    public Book(String id, @NotBlank @Size(max = 100) String title, String author, String description, Date createdAt, Date updatedAt, String imageUrl, Double cost, Stock stock) {
+    public Book(String id, @NotBlank @Size(max = 100) String title, String author, String description, Date createdAt, Date updatedAt, String imageUrl, Double cost, Stock stock, String status) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -56,6 +56,23 @@ public class Book {
         this.updatedAt = updatedAt;
         this.imageUrl = imageUrl;
         this.cost = cost;
+        this.stock = stock;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
         this.stock = stock;
     }
 
@@ -138,6 +155,7 @@ public class Book {
                 ", updatedAt=" + updatedAt +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", cost=" + cost +
+                ", status=" + status +
                 '}';
     }
 
