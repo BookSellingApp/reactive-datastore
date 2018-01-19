@@ -1,7 +1,7 @@
 package com.bookselling.reactivedatastore.models;
 
 /*
- * @author santoshsindham
+ * @author sindham
  * @date 18/12/17, 10:28 PM
  */
 
