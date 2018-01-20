@@ -1,0 +1,357 @@
+1. Fetch all books
+GET
+http://localhost:8080/api/books
+
+Response: Books Collection
+[
+    {
+        "id": "5a4615712b9046161f7f3b21",
+        "title": "A brief History of Time",
+        "author": "Stephen Hawking",
+        "description": "Its a nice write up on the time",
+        "createdAt": "2018-01-13T16:40:55.307+0000",
+        "updatedAt": "2018-01-13T17:10:20.528+0000",
+        "imageUrl": "check.com",
+        "cost": 232,
+        "status": null,
+        "stock": null
+    },
+    {
+        "id": "5a48b338b0522fee2e4c6142",
+        "title": "Revolution 2020",
+        "author": "Chetan Bhagat",
+        "description": "A nice love story",
+        "createdAt": "2017-12-31T09:51:52.761+0000",
+        "updatedAt": "2017-12-31T09:51:52.761+0000",
+        "imageUrl": "google.com",
+        "cost": 100,
+        "status": null,
+        "stock": null
+    }
+]
+
+2. Search a book by {title}
+
+GET 
+http://localhost:8080/api/books/api/books/search/{title}
+
+Sample Req: http://localhost:8080/api/books/search/Java
+Response:
+[
+    {
+        "id": "5a5ad8e5e5b8160b24774409",
+        "title": "Java",
+        "author": "Ryan Gostling",
+        "description": "Java book",
+        "createdAt": "2018-01-14T04:13:25.280+0000",
+        "updatedAt": "2018-01-14T04:13:25.280+0000",
+        "imageUrl": "java.com",
+        "cost": 221,
+        "status": "false",
+        "stock": null
+    }
+]
+
+Sample req not existing book: http://localhost:8080/api/books/search/DotNet
+Response:
+[
+    null
+]
+
+
+3. Create a new/old book
+POST
+http://localhost:8080/api/books
+
+Headers: 
+Content-Type: application/json
+Accept: application/json
+
+Body:
+{
+        "title": "Operating Systems",
+        "author": "James Barker",
+        "description": "A book on Operating systems",
+        "imageUrl": "operatingSystems.com",
+        "cost": 241,
+        "status": "new",
+        "stock": null
+}	
+
+
+Response:
+
+{
+    "id": "5a6350e2e5b8163fe0de41d4",
+    "title": "Operating Systems",
+    "author": "James Barker",
+    "description": "A book on Operating systems",
+    "createdAt": "2018-01-20T14:23:30.496+0000",
+    "updatedAt": "2018-01-20T14:23:30.496+0000",
+    "imageUrl": "operatingSystems.com",
+    "cost": 241,
+    "status": "new",
+    "stock": null
+}
+
+4. Get a book by ID
+GET 
+http://localhost:8080/api/books/{id}
+
+Sample Req: http://localhost:8080/api/books/5a6350e2e5b8163fe0de41d4
+
+Response:
+{
+    "id": "5a6350e2e5b8163fe0de41d4",
+    "title": "New Operating Systemss",
+    "author": "Donald Barker",
+    "description": "A book on Operating systems",
+    "createdAt": "2018-01-20T14:23:30.496+0000",
+    "updatedAt": "2018-01-20T14:23:30.496+0000",
+    "imageUrl": "operatingSystems.com",
+    "cost": 241,
+    "status": "new",
+    "stock": null
+}
+
+
+5. Update a book
+
+PUT
+http://localhost:8080/api/books/{id}
+
+Sample Req: http://localhost:8080/api/books/5a6350e2e5b8163fe0de41d4
+
+Headers: 
+Content-Type: application/json
+Accept: application/json
+
+Body:
+{
+        "title": "Updated Operating Systems",
+        "author": "Donald Barker",
+        "description": "An updated book on Operating systems",
+        "imageUrl": "operatingSystems.com",
+        "cost": 241,
+        "status": "new",
+        "stock": null
+	
+}
+
+Response:
+{
+    "id": "5a6350e2e5b8163fe0de41d4",
+    "title": "Updated Operating Systems",
+    "author": "Donald Barker",
+    "description": "An updated book on Operating systems",
+    "createdAt": "2018-01-20T14:23:30.496+0000",
+    "updatedAt": "2018-01-20T14:27:55.529+0000",
+    "imageUrl": "operatingSystems.com",
+    "cost": 241,
+    "status": "new",
+    "stock": null
+}
+
+6. Delete a book
+
+DELETE
+
+http://localhost:8080/api/books/{id}
+
+Sample Req: http://localhost:8080/api/books/5a6350e2e5b8163fe0de41d4
+
+
+7. Fetch all customers
+GET
+http://localhost:8080/api/customers
+
+Response: Customer Collection
+[
+    {
+        "id": "5a5884abe5b8167295962f88",
+        "firstName": "iiiiiiiii",
+        "lastName": "iiiiiiiii",
+        "emailId": "iiiiiiiii@iiiiiiiii.com",
+        "mobileNumber": "88888",
+        "password": "iiiiiiiii",
+        "address": {
+            "id": null,
+            "addressLine1": "iiiiiiiii",
+            "addressLine2": "iiiiiiiii",
+            "locality": "iiiiiiiii",
+            "landmark": "iiiiiiiii",
+            "city": "iiiiiiiii",
+            "state": "iiiiiiiii",
+            "country": "iiiiiiiii",
+            "postalCode": "99999",
+            "createdAt": "2018-01-12T09:49:31.902+0000",
+            "updatedAt": "2018-01-12T09:49:31.902+0000"
+        }
+    },
+    {
+        "id": "5a5a44ffe5b8160b24774408",
+        "firstName": "tarun",
+        "lastName": "koduru",
+        "emailId": "tarun.koduru@gmail.com",
+        "mobileNumber": "9911223389",
+        "password": "tarun",
+        "address": {
+            "id": null,
+            "addressLine1": "lb nagar",
+            "addressLine2": "ntr nagar",
+            "locality": "mustafa masjid",
+            "landmark": "beside devi temple",
+            "city": "hyderabad",
+            "state": "telangana",
+            "country": "India",
+            "postalCode": "500078",
+            "createdAt": "2018-01-13T17:42:22.934+0000",
+            "updatedAt": "2018-01-13T17:42:22.934+0000"
+        }
+    }
+]
+
+
+8. Create a customer
+POST
+http://localhost:8080/api/customer
+
+Headers: 
+Content-Type: application/json
+Accept: application/json
+
+Body:
+
+    {
+        "firstName": "rajesh",
+        "lastName": "mallem",
+        "emailId": "rajesh.mallem@gmail.com",
+        "mobileNumber": "9911223389",
+        "password": "rajesh123",
+        "address": {
+            "addressLine1": "lb nagar",
+            "addressLine2": "ntr nagar",
+            "locality": "mustafa masjid",
+            "landmark": "beside devi temple",
+            "city": "hyderabad",
+            "state": "telangana",
+            "country": "India",
+            "postalCode": "500078"
+        }
+    }	
+
+
+Response:
+
+{
+    "id": "5a6353f4e5b8163fe0de41d5",
+    "firstName": "rajesh",
+    "lastName": "mallem",
+    "emailId": "rajesh.mallem@gmail.com",
+    "mobileNumber": "9911223389",
+    "password": "rajesh123",
+    "address": {
+        "id": null,
+        "addressLine1": "lb nagar",
+        "addressLine2": "ntr nagar",
+        "locality": "mustafa masjid",
+        "landmark": "beside devi temple",
+        "city": "hyderabad",
+        "state": "telangana",
+        "country": "India",
+        "postalCode": "500078",
+        "createdAt": "2018-01-20T14:36:36.198+0000",
+        "updatedAt": "2018-01-20T14:36:36.198+0000"
+    }
+}
+
+9. Get a customer by ID
+GET 
+http://localhost:8080/api/customers/{id}
+
+Sample Req: http://localhost:8080/api/customers/5a6353f4e5b8163fe0de41d5
+
+Response:
+{
+    "id": "5a6353f4e5b8163fe0de41d5",
+    "firstName": "rajesh",
+    "lastName": "mallem",
+    "emailId": "rajesh.mallem@gmail.com",
+    "mobileNumber": "9911223389",
+    "password": "rajesh123",
+    "address": {
+        "id": null,
+        "addressLine1": "lb nagar",
+        "addressLine2": "ntr nagar",
+        "locality": "mustafa masjid",
+        "landmark": "beside devi temple",
+        "city": "hyderabad",
+        "state": "telangana",
+        "country": "India",
+        "postalCode": "500078",
+        "createdAt": "2018-01-20T14:36:36.198+0000",
+        "updatedAt": "2018-01-20T14:36:36.198+0000"
+    }
+}
+
+10. Update a customer
+
+PUT
+http://localhost:8080/api/customers/{id}
+
+Sample Req: http://localhost:8080/api/customers/5a6353f4e5b8163fe0de41d5
+
+Headers: 
+Content-Type: application/json
+Accept: application/json
+
+Body:
+
+    {
+        "firstName": "rajesh",
+        "lastName": "nalli",
+        "emailId": "rajesh.mallem@gmail.com",
+        "mobileNumber": "9911223389",
+        "password": "rajesh123",
+        "address": {
+            "addressLine1": "lb nagar",
+            "addressLine2": "ntr nagar",
+            "locality": "mustafa masjid",
+            "landmark": "beside devi temple",
+            "city": "hyderabad",
+            "state": "telangana",
+            "country": "India",
+            "postalCode": "500078"
+        }
+    }
+
+Response:
+{
+    "id": "5a6353f4e5b8163fe0de41d5",
+    "firstName": "rajesh",
+    "lastName": "nalli",
+    "emailId": "rajesh.mallem@gmail.com",
+    "mobileNumber": "9911223389",
+    "password": "rajesh123",
+    "address": {
+        "id": null,
+        "addressLine1": "lb nagar",
+        "addressLine2": "ntr nagar",
+        "locality": "mustafa masjid",
+        "landmark": "beside devi temple",
+        "city": "hyderabad",
+        "state": "telangana",
+        "country": "India",
+        "postalCode": "500078",
+        "createdAt": "2018-01-20T14:36:36.198+0000",
+        "updatedAt": "2018-01-20T14:36:36.198+0000"
+    }
+}
+
+11. Delete a customer
+
+DELETE
+
+http://localhost:8080/api/customers/{id}
+
+Sample Req: http://localhost:8080/api/customers/5a6353f4e5b8163fe0de41d5
